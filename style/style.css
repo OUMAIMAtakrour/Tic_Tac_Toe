@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#game{
+    width: 90%;
+    height: 150vh;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    border: solid;
+    border-color: rgb(0, 83, 192);
+
+}
+.square{
+    width: 20%;
+    height: 25%;
+    background-color: white;
+    border: solid;
+    border-color: rgb(0, 83, 192);
+
+    box-sizing: border-box;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle{
+    height: 80%;
+    width: 60%  ;
+    /* background-color: aquamarine; */
+    border-radius: 50%;
+    border: solid ;
+    border-color: rgb(250, 0, 0);
+}
+.cross{
+    height: 80%;
+    width: 60% ;
+    background-color: rgb(49, 210, 71);
+}
