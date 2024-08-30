@@ -19,12 +19,11 @@ body{
 
 }
 .square{
-    width: 20%;
-    height: 200px;
+    width: 5%;
+    height: 50px;
     background-color: white;
     border: solid;
     border-color: rgb(0, 83, 192);
-
     box-sizing: border-box;  
     display: flex;
     justify-content: center;
@@ -40,7 +39,26 @@ body{
     border-color: rgb(250, 0, 0);
 }
 .cross{
-    height: 80%;
-    width: 60% ;
+    height: 70%;
+    width:5%;
     background-color: rgb(49, 210, 71);
+    position: relative;
+    transform: rotate(45deg);
+}
+.cross:before,.cross:after{
+    content: "";
+    position: absolute;
+    background-color: rgb(49, 210, 71);
+}
+.cross:before{
+    left: 70%;
+    height: 90%;
+    width:50%;
+    margin-left: -15%;
+}
+.cross:after{
+    height: 90%;
+    width:30%;
+    transform: rotate(-90deg);
+    margin-top: 5%;
 }
