@@ -50,9 +50,10 @@ function createGrid() {
   });
 }
 createGrid();
-function addGo() {
+function addGo(e) {
   console.log("clicked", e.target);
   const start = document.createElement("div");
   start.classList.add(play);
-  e.target.append(start)
+  e.target.append(start);
+  play = play === "circle" ? "cross" : "circle";
 }
