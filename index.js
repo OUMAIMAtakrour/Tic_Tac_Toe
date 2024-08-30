@@ -33,6 +33,11 @@ const cells = [
   "",
   "",
   "",
+  "",
+  "",
+  "",
+  "",
+  "",
   //   37
 ];
 
@@ -49,6 +54,7 @@ function createGrid() {
     game.appendChild(cellElement);
   });
 }
+
 createGrid();
 function addGo(e) {
   console.log("clicked", e.target);
@@ -56,4 +62,11 @@ function addGo(e) {
   start.classList.add(play);
   e.target.append(start);
   play = play === "circle" ? "cross" : "circle";
+  console.log(play);
+  infos.textContent = play + "'s turn";
+  e.target.removeEventListener("click", addGo);
+  checkScore();
+}
+function checkScore() {
+  const allSquares = document.querySelectorAll(".square");
 }

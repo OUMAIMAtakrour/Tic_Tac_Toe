@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: auto;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -10,7 +10,7 @@ body{
 
 #game{
     width: 90%;
-    height: 150vh;
+    height: auto;
     background-color: black;
     display: flex;
     flex-wrap: wrap;
@@ -20,7 +20,7 @@ body{
 }
 .square{
     width: 20%;
-    height: 25%;
+    height: 200px;
     background-color: white;
     border: solid;
     border-color: rgb(0, 83, 192);
@@ -31,7 +31,7 @@ body{
     align-items: center;
 }
 .circle{
-    height: 85%;
+    height: 65%;
     width: 60%  ;
     /* background-color: aquamarine; */
     border-radius: 50%;
