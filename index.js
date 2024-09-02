@@ -195,6 +195,37 @@ function resetGame() {
   displayPlayerInfo();
 }
 
+document.querySelector("#startGame").addEventListener("click", function () {
+  const player1Name = document.querySelector("#player1").value.trim();
+  const player2Name = document.querySelector("#player2").value.trim();
+
+  if (player1Name === "" || player2Name === "") {
+    alert("Please enter names for both players.");
+    return;
+  }
+
+  if (player1Name.indexOf(" ") !== -1 || player2Name.indexOf(" ") !== -1) {
+    alert("Names cannot contain spaces.");
+    return;
+  }
+
+  if (player1Name === player2Name) {
+    alert("Both players must have different names.");
+    return;
+  }
+
+  loadPlayers();
+  const player1 = addPlayer(player1Name);
+  const player2 = addPlayer(player2Name);
+
+  localStorage.setItem("currentPlayer1", player1.name);
+  localStorage.setItem("currentPlayer2", player2.name);
+
+  saveGameHistory();
+  displayPlayerInfo();
+  window.location.href = "game.html";
+});
+
 const startButton = document.querySelector("#startGame");
 
 startButton.addEventListener("click", () => {
