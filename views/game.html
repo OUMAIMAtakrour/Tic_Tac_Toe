@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIC_TAC_TOE</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <div id="playerForm">
+        <h2>Enter Player Names</h2>
+        <input type="text" id="player1" placeholder="Enter Player 1 Name">
+        <input type="text" id="player2" placeholder="Enter Player 2 Name">
+        <button id="startGame" type="button">Start Game</button>
+    </div>
+    <div id="game"></div>
+    <p id="infos"></p>
+    <div id="winPopup" class="popup-container hidden">
+  <div class="popup-content">
+    <h2 id="winMessage">Winner!</h2>
+    <button id="resetBtn">Play Again</button>
+  </div>
+</div>
+<div id="history"></div>
+<button id="showHistory">Show History</button>
+<button id="showScores">Show Scores</button>
+
+
+<div id="scorePopup" class="popup">
+  <div class="popup-content">
+      <span class="close">&times;</span>
+      <h2>SCORES</h2>
+      <div id="scoresList">
+          <!-- Scores will be inserted here by JavaScript -->
+      </div>
+  </div>
+</div>
+
+    <script src="../index.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+# Tic-Tac-Toe Game
+
+## Overview
+
+This project is a modern take on the classic Tic-Tac-Toe game, built purely with JavaScript. The game features a 20x20 grid, but the algorithm is flexible and can adapt to any grid size.
+
+Unlike traditional implementations, this game utilizes a **no-database** approach. All data, including player names, scores, and game history, are stored locally using the browser's Local Storage. This makes the game lightweight and easy to run without any server-side dependencies.
+
+## Features
+
+- **Dynamic Grid Size**: The game is designed to work with any grid size, offering flexibility and a more challenging experience.
+- **Local Storage Integration**: All game data, such as player names, scores, and history, is stored in Local Storage, ensuring that your progress is saved even if you close the browser.
+- **Winning Algorithm**: The core of the game is the `win()` function, which checks for winning combinations in all possible directions—horizontal, vertical, and diagonal. This function is robust and scales with the grid size.
+- **Score Tracking**: The game tracks player scores and updates them in real-time. Scores are stored in Local Storage and persist between sessions.
+- **History Management**: The game includes a feature to view the history of past moves, allowing players to review their gameplay.
+
+How to Play
+Enter Player Names: Start the game by entering the names of the two players.
+Take Turns: Players take turns clicking on the grid to place their marks (crosses or circles).
+Win Condition: The first player to align five of their marks in a row—horizontally, vertically, or diagonally—wins the game.
+View History: You can review the history of moves and scores at any time during or after the game.
+Reset Game: The game can be reset to start over, with scores and history persisting across games.
+
+Key Functions
+win()
+The win() function is the heart of the game. It checks for winning combinations across the grid:
+
+Horizontal Checks
+Vertical Checks
+Diagonal Checks (Left-to-Right)
+Diagonal Checks (Right-to-Left)
+The function is optimized to work with any grid size, making it versatile and efficient.
+
+saveGameHistory(playerName, playerScore)
+This function saves the current state of the game to Local Storage, ensuring that player moves and scores are recorded for future reference.
+
+showGameHistory()
+Displays the game history, including each player's moves and scores, allowing players to review their performance.
+
+resetGame()
+Resets the game while retaining the scores and player names, providing a fresh start for the next round.
+
+Technologies Used
+JavaScript: The core logic and functionality.
+HTML/CSS: The user interface and styling.
+Local Storage: For persistent data storage without a backend.
+
