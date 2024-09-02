@@ -272,14 +272,6 @@ loadPlayers();
 createGrid();
 displayPlayerInfo();
 
-const scores = [
-  { username: "Player1", score: 500 },
-  { username: "Player2", score: 450 },
-  { username: "Player3", score: 400 },
-  { username: "Player4", score: 350 },
-  { username: "Player5", score: 300 },
-];
-
 const popup = document.getElementById("scorePopup");
 
 const showScoresBtn = document.getElementById("showScores");
