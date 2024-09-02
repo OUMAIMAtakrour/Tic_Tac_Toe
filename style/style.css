@@ -1,4 +1,4 @@
-body{
+body {
     margin: 10px;
     padding: 10px;
     height: auto;
@@ -6,59 +6,72 @@ body{
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(186, 126, 242);
+    background: linear-gradient(to bottom, violet, rgb(186, 126, 242));
 }
 
-#game{
+#game {
     width: 90%;
     height: auto;
     background-color: black;
     display: flex;
     flex-wrap: wrap;
-    border: solid;
+    border: solid 2px;
     border-color: rgb(0, 83, 192);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    overflow: hidden;
 }
-.square{
+
+.square {
     width: 5%;
     height: 50px;
     background-color: white;
-    border: solid;
+    border: solid 1px;
     border-color: rgb(0, 83, 192);
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.3s ease;
 }
-.circle{
+
+.square:hover {
+    background-color: rgb(185, 210, 242);
+}
+
+.circle {
     height: 65%;
     width: 60%;
-    /* background-color: aquamarine; */
     border-radius: 50%;
-    border: solid;
-    border-width: 7px;
+    border: solid 7px;
     border-color: rgb(250, 0, 0);
 }
-.cross{
+
+.cross {
     height: 70%;
-    width:5%;
+    width: 5%;
     background-color: rgb(49, 210, 71);
     position: relative;
     transform: rotate(45deg);
 }
-.cross:before,.cross:after{
+
+.cross:before,
+.cross:after {
     content: "";
     position: absolute;
     background-color: rgb(49, 210, 71);
 }
-.cross:before{
+
+.cross:before {
     left: 70%;
     height: 90%;
-    width:50%;
+    width: 50%;
     margin-left: -15%;
 }
-.cross:after{
+
+.cross:after {
     height: 90%;
-    width:30%;
+    width: 30%;
     transform: rotate(-90deg);
     margin-top: 5%;
 }

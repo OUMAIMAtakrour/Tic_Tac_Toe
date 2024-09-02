@@ -39,11 +39,17 @@ function addGo(e) {
   e.target.removeEventListener("click", addGo);
   win();
 }
+
+
 winningCombinations = [];
 
 function win(e) {
   const allSquares = document.querySelectorAll(".square");
-
+  function removeListeners() {
+    allSquares.forEach((square) => {
+      square.removeEventListener("click", addGo);
+    });
+  }
   for (let i = 0; i < allSquares.length; i += size) {
     for (let j = 0; j < 16; j++) {
       const slice = Array.from(allSquares).slice(i + j, i + j + 5);
@@ -58,7 +64,7 @@ function win(e) {
           ))
       ) {
         infos.textContent = "win";
-
+        removeListeners();
         return;
       }
     }
@@ -76,6 +82,7 @@ function win(e) {
         )
       ) {
         infos.textContent = "Cross wins!";
+        removeListeners();
         return;
       }
 
@@ -86,6 +93,7 @@ function win(e) {
         )
       ) {
         infos.textContent = "Circle wins!";
+        removeListeners();
         return;
       }
     }
@@ -103,6 +111,7 @@ function win(e) {
         )
       ) {
         infos.textContent = "Cross wins!";
+        removeListeners();
         return;
       }
 
@@ -113,6 +122,7 @@ function win(e) {
         )
       ) {
         infos.textContent = "Circle wins!";
+        removeListeners();
         return;
       }
     }
