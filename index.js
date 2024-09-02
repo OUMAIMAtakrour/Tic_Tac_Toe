@@ -5,11 +5,14 @@ console.log(game);
 // for(let i;i<400;i++){
 //     cells.push("");
 // }
+
 const cells = Array(400).fill("");
+const size = Math.sqrt(400);
+const toWin = 5;
+// const row = cells.length;
+// console.log(row);
 
-const row = cells.length;
-console.log(row);
-
+let count = 0;
 let play = "cross";
 infos.textContent = "cross goes first";
 function createGrid() {
@@ -34,10 +37,84 @@ function addGo(e) {
   console.log(play);
   infos.textContent = play + "'s turn";
   e.target.removeEventListener("click", addGo);
-  checkScore();
+  win();
 }
 winningCombinations = [];
 
-function checkScore() {
+function win(e) {
   const allSquares = document.querySelectorAll(".square");
+
+  for (let i = 0; i < allSquares.length; i += size) {
+    for (let j = 0; j < 16; j++) {
+      const slice = Array.from(allSquares).slice(i + j, i + j + 5);
+      if (
+        (slice.length === 5 &&
+          slice.every((square) =>
+            square.firstChild?.classList.contains("cross")
+          )) ||
+        (slice.length === 5 &&
+          slice.every((square) =>
+            square.firstChild?.classList.contains("circle")
+          ))
+      ) {
+        infos.textContent = "win";
+
+        return;
+      }
+    }
+
+    for (let i = 0; i <= allSquares.length - toWin * (size + 1); i++) {
+      let leftToRight = [];
+      for (let j = 0; j < toWin; j++) {
+        leftToRight.push(allSquares[i + j * (size + 1)]);
+      }
+
+      if (
+        leftToRight.length === toWin &&
+        leftToRight.every((square) =>
+          square.firstChild?.classList.contains("cross")
+        )
+      ) {
+        infos.textContent = "Cross wins!";
+        return;
+      }
+
+      if (
+        leftToRight.length === toWin &&
+        leftToRight.every((square) =>
+          square.firstChild?.classList.contains("circle")
+        )
+      ) {
+        infos.textContent = "Circle wins!";
+        return;
+      }
+    }
+
+    for (let i = toWin - 1; i <= allSquares.length - toWin * size; i++) {
+      let rightToLeft = [];
+      for (let j = 0; j < toWin; j++) {
+        rightToLeft.push(allSquares[i + j * (size - 1)]);
+      }
+
+      if (
+        rightToLeft.length === toWin &&
+        rightToLeft.every((square) =>
+          square.firstChild?.classList.contains("cross")
+        )
+      ) {
+        infos.textContent = "Cross wins!";
+        return;
+      }
+
+      if (
+        rightToLeft.length === toWin &&
+        rightToLeft.every((square) =>
+          square.firstChild?.classList.contains("circle")
+        )
+      ) {
+        infos.textContent = "Circle wins!";
+        return;
+      }
+    }
+  }
 }
